@@ -39,7 +39,6 @@ runs the code in a Python 3.4 virtual environment. URLs are kept in a single tab
     * **home.html**: Jinja2 template for home page.
     * **login.html**: Jinja2 template for login page.
     * **template.html**: Jinja2 base template, extended by home and login pages.
-* /venv**: Python 3.8 virtual environment for running the system locally.
 * **application.py**: Main script that must be run to get the front-end pages and the API endpoints working.
 * **db.py**: Module for connecting with the SQLite database.
 * **models.py**: Module that defines the SQL model used for keeping URLs in the database.
