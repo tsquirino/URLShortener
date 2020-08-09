@@ -1,0 +1,77 @@
+{% extends "template.html" %}
+{% set page_title = "Home" %}
+{% set page_header = "URLShortener" %}
+{% block content %}
+
+<p class="float-right">
+    <a href="{{ url_for('logout') }}">Logout</a>
+</p>
+
+<!-- List of URLs -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Shortened URL</th>
+            <th scope="col">Original URL</th>
+            <th scope="col">Expiration date</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for url in data['data'] %}
+    <tr>
+      <th scope="row">{{ url['id'] }}</th>
+      <td><a href="{{ url['shortened_url'] }}" target="_blank">{{ url['shortened_url'] }}</a></td>
+      <td><a href="{{ url['original_url'] }}" target="_blank">{{ url['original_url'] }}</a></td>
+      <td>{{ url['expiration_date'] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<!-- Pagination links -->
+<nav>
+  <ul class="pagination justify-content-center">
+    {% if data['current'] > 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ data['_links']['first'] }}">&lt;&lt;</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link" href="#">&lt;&lt;</a>
+    </li>
+    {% endif %}
+    {% if 'prev' in data['_links'] %}
+    <li class="page-item">
+        <a class="page-link" href="{{ data['_links']['prev'] }}">&lt;</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#">&lt;</a>
+    </li>
+    {% endif %}
+    <li class="page-item active">
+      <a class="page-link" href="#">{{ data['current'] }} <span class="sr-only">/{{ data['total'] }}</span></a>
+    </li>
+    {% if 'next' in data['_links'] %}
+    <li class="page-item">
+        <a class="page-link" href="{{ data['_links']['next'] }}">&gt;</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#">&gt;</a>
+    </li>
+    {% endif %}
+    {% if data['current'] < data['last'] %}
+    <li class="page-item">
+      <a class="page-link" href="{{ data['_links']['last'] }}">&gt;&gt;</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#">&gt;&gt;</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+
+{% endblock %}

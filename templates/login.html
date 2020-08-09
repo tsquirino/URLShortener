@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% set page_title = "Login" %}
+{% set page_header = "Login" %}
+{% block content %}
+
+<form method="POST" action="{{ url_for('login') }}">
+    <p>
+        <label>Username:</label>
+        <input class="form-control" type="text" name="username" />
+    </p>
+    <p>
+        <label>Password:</label>
+        <input class="form-control" type="password" name="password" />
+    </p>
+    <p>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+    </p>
+</form>
+
+{% endblock %}
