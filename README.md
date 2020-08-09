@@ -2,15 +2,19 @@
 
 Web system for creating short URLs. Currently hosted on [http://54.207.156.55].
 
-## Running instructions (Windows)
+## Running instructions
 
-This API can be run locally in a Windows environment with following instructions:
+This API can be run locally in a local environment with Python 3.x installed with following instructions:
 
 1. Clone this repository to a local path
-2. Open a CMD terminal from the chosen local path and run the following command:
-```
-"venv/Scripts/python.exe" application.py
-```
+2. Install packages from requirements.txt in the local Python environment
+	```
+	python3 pip -r requirements.txt
+	```
+3. Run application
+	```
+	python3 application.py
+	```
 
 The version currently running on [http://54.207.156.55] was deployed using AWS Elastic Beanstalk.
 
@@ -30,8 +34,9 @@ Credentials for accessing the URL list:
 
 ## Source code
 
-The whole system (front-end and back-end) was developed in Python, using the Flask framework. Its web server currently
-runs the code in a Python 3.4 virtual environment. URLs are kept in a single table of a SQLite database.
+The whole system (front-end and back-end) was developed in Python, using the Flask framework. The example is currently
+running in a Python 3.7 virtual environment set in AWS Elastic Beanstalk. URLs are kept in a single table of a
+SQLite database.
 
 ### File structure
 
