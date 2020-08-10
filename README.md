@@ -49,6 +49,6 @@ SQLite database.
 * **models.py**: Module that defines the SQL model used for keeping URLs in the database.
 * **README.md**: This file, contains general description of the system and its source code structure.
 * **requirements.txt**: Contains the package versions needed by the Python environment for the code to work.
-* **routes.py**: Module that implements all available endpoints.
+* **routes.py**: Module that implements logic for API endpoints and front-end routes.
 * **source.zip**: ZIP file containing all source code, used for deploying app in AWS Elastic Beanstalk.
 * **url.db**: SQLite database that stores the URLs.

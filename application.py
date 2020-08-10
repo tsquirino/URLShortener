@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------
+# Main Flask application file
+# Entry point to get the front-end pages and the API endpoints running.
+#
+# (C) Tomás Quirino, August 2020
+# -----------------------------------------------------------------------
+
 from flask import Flask
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit

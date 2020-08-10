@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------
+# Routes module
+# Implements logic for API endpoints and front-end routes.
+#
+# (C) Tomás Quirino, August 2020
+# -----------------------------------------------------------------------
+
 from flask import session, request, redirect, url_for, render_template, flash, abort, jsonify
 import random
 import datetime
@@ -132,7 +139,7 @@ def home():
     if 'username' not in session:
         return redirect(url_for('login'))
 
-    # Define offset for pagination (default: 0)
+    # Define current page for pagination (default: first page)
     if 'page' not in request.args:
         page = 1
     else:
@@ -143,7 +150,7 @@ def home():
         except ValueError:
             page = 1
 
-    # Define limit for pagination (default: 5)
+    # Define entries per page for pagination (default: 5)
     if 'limit' not in request.args:
         limit = 5
     else:

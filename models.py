@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------
+# SQL models module
+# Defines the SQL model used for keeping URLs in the database.
+#
+# (C) Tomás Quirino, August 2020
+# -----------------------------------------------------------------------
+
 from datetime import datetime
 
 from db import db
