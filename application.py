@@ -83,7 +83,7 @@ def new():
     responses:
       200:
         description: Successful request. Returns JSON string with the generated URL and the newly added database entry.
-      404:
+      400:
         description: Unsuccessful request. Returns JSON string with error message.
     """
     return routes.new()
